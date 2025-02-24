@@ -1,0 +1,21 @@
+{
+  "name": "steinos",
+  "version": "1.0.0",
+  "description": "An operating system all in the web browser",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js -e js,json,html,css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stein-rip/steinOS.git"
+  },
+  "author": "stein-rip",
+  "contributors": []
+}

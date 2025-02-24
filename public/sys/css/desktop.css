@@ -1,0 +1,27 @@
+.desktop-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  cursor: pointer;
+}
+.desktop-item > .icon {
+  width: 32px;
+  height: 32px;
+}
+.desktop-item > .title {
+  display: -webkit-box;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  word-wrap: break-word;
+  max-width: 72px;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.desktop-item.moving {
+  z-index: 1000002; /* Absurdly high number */
+}

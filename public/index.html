@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>steinOS</title>
+		<link
+			rel="shortcut icon"
+			href="/sys/img/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="/sys/css/main.css" />
+		<link rel="stylesheet" href="/sys/css/taskbar.css" />
+		<link rel="stylesheet" href="/sys/css/desktop.css" />
+		<link rel="stylesheet" href="/sys/css/gui.css" />
+		<link rel="stylesheet" href="/bios/boot.css" />
+		<script type="module" src="/bios/boot.js"></script>
+	</head>
+	<body class="zero-margin">
+		<div id="boot-screen" class="bold-text"></div>
+		<canvas id="background" class="full-page"></canvas>
+		<div id="desktop-content"></div>
+		<div id="taskbar" class="gray-container">
+			<div class="flex-spacer"></div>
+			<div id="notifs-container" class="gray-inset">
+				<span class="time">time</span>
+			</div>
+		</div>
+	</body>
+</html>

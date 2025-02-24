@@ -1,0 +1,143 @@
+.window {
+	display: flex;
+	flex-direction: column;
+
+	position: absolute;
+}
+.window > .title-bar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+
+	padding: calc(var(--un-menubar-thickness) * 2);
+}
+.window.unfocused > .title-bar {
+	background-color: #808080;
+}
+.window > .title-bar > .app-icon {
+	width: 16px;
+	height: 16px;
+}
+.window > .frame {
+	height: 100%;
+}
+.window.minimized {
+	display: none;
+}
+.window.maximized {
+	top: 0px !important;
+	left: 0px !important;
+	width: 100% !important;
+	height: calc(100% - 30px) !important; /* Pre calculated taskbar height */
+}
+
+.minimize-window > .icon {
+	background-image: url("/sys/img/minimize.png");
+	width: 16px;
+	height: 16px;
+}
+.maximize-window > .icon {
+	background-image: url("/sys/img/maximize.png");
+	width: 16px;
+	height: 16px;
+}
+.close-window > .icon {
+	background-image: url("/sys/img/close.png");
+	width: 16px;
+	height: 16px;
+}
+
+/* Window resizer */
+.resizer-n,
+.resizer-e,
+.resizer-s,
+.resizer-w,
+.resizer-ne,
+.resizer-se,
+.resizer-sw,
+.resizer-nw {
+	position: absolute;
+	z-index: 999;
+	inset: 0px 0px 0px 0px;
+	pointer-events: auto;
+	width: calc(var(--un-menubar-thickness) * 2);
+	height: calc(var(--un-menubar-thickness) * 2);
+}
+
+/* Window resizer dimensions */
+.resizer-n,
+.resizer-s {
+	width: calc(100% + var(--un-menubar-thickness) * 2);
+}
+.resizer-e,
+.resizer-w {
+	height: calc(100% + var(--un-menubar-thickness) * 2);
+}
+
+/* Window resizer positions */
+.resizer-n,
+.resizer-w,
+.resizer-nw {
+	inset: calc(-1 * var(--un-menubar-thickness)) 0px 0px
+		calc(-1 * var(--un-menubar-thickness));
+}
+.resizer-e,
+.resizer-ne {
+	inset: calc(-1 * var(--un-menubar-thickness)) 0px 0px
+		calc(100% + -1 * var(--un-menubar-thickness));
+}
+.resizer-s,
+.resizer-sw {
+	inset: calc(100% + -1 * var(--un-menubar-thickness)) 0px 0px
+		calc(-1 * var(--un-menubar-thickness));
+}
+.resizer-se {
+	inset: calc(100% + -1 * var(--un-menubar-thickness)) 0px 0px
+		calc(100% + -1 * var(--un-menubar-thickness));
+}
+
+/* Window resizer cursors */
+.resizer-n {
+	cursor: n-resize;
+}
+.resizer-e {
+	cursor: e-resize;
+}
+.resizer-s {
+	cursor: s-resize;
+}
+.resizer-w {
+	cursor: w-resize;
+}
+.resizer-ne {
+	cursor: ne-resize;
+}
+.resizer-se {
+	cursor: se-resize;
+}
+.resizer-sw {
+	cursor: sw-resize;
+}
+.resizer-nw {
+	cursor: nw-resize;
+}
+
+/* Context menu */
+.context-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
+	position: absolute;
+}
+.context-menu .option {
+	padding: calc(var(--un-menubar-thickness) * 1)
+		calc(var(--un-menubar-thickness) * 4);
+}
+.context-menu .option:hover {
+	background-color: #357ec7;
+}
+.context-menu .divider {
+	border-top: var(--un-menubar-thickness) solid var(--c-menubar-dark);
+	border-bottom: var(--un-menubar-thickness) solid var(--c-menubar-bright);
+}
